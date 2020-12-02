@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+</head>
+<body>
+<h1>Registration page</h1>
+<h2> User already exists or email address is incorrect</h2>
+<form th:action="@{/register}" method="post">
+    <label for="username">Username (e-mail)</label>:
+    <input type="text" id="username" name="username"> <br>
+    <label for="password">Password</label>:
+    <input type="password" id="password" name="password"> <br>
+    <label>Choose your role:</label>
+    <select name="role">
+        <option th:each="roles : ${T(pl.deska.springbootsecurityimplementation.model.Role).values()}"
+                th:value="${roles}" th:text="${roles.name}" >
+        </option>
+    </select>
+    <input type="submit" value="Sign up">
+</form>
+</body>
+</html>
