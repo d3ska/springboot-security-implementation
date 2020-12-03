@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import pl.deska.springbootsecurityimplementation.service.encoder.CaeserPasswordEncoder;
 
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -49,6 +50,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder getPasswordEncoder(){
-        return new BCryptPasswordEncoder();
+        return new CaeserPasswordEncoder();
     }
 }
